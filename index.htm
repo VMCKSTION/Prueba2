@@ -26,13 +26,22 @@
         nav a {
             color: white;
             text-decoration: none;
-            padding: 14px 20px;
+            padding: 14px 30px;
             margin: 0 10px;
             font-size: 18px;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
         nav a:hover {
-            background-color: #ff69b4;
-            border-radius: 5px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+            nav a:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
         }
         img {

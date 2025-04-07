@@ -14,24 +14,93 @@
         h1 {
             color: #ff69b4;
             font-size: 50px;
+        /* Estilo del menú de navegación */
+        nav {
+            background-color: #ff1493;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            background-color: #ff69b4;
+            border-radius: 5px;
+        }
         }
         img {
             width: 300px;
             margin: 20px;
             border-radius: 15px;
         }
+        /* Estilo para las imágenes del álbum */
+        .album {
+            display: none; /* Escondemos el álbum por defecto */
+            margin-top: 100px;
+        }
+
+        .album img {
+            width: 300px;
+            margin: 20px;
+            border-radius: 15px;
+        }
+        /* Mostrar álbum */
+        .show {
+            display: block;
+        }
+
+        /* Estilo para las imágenes de cumpleaños */
+        .birthday-images img {
+            width: 300px;
+            margin: 20px;
+            border-radius: 15px;
+            }
     </style>
 </head>
 <body>
+    <nav>
+        <!-- Menú de navegación -->
+        <a href="#" onclick="mostrarAlbum('album')">Álbum</a>
+    </nav>
 
     <h1>¡Feliz Cumpleaños!</h1>
         <h1>¡Marlene!</h1>
-    
+    <div class="birthday-images">
     <!-- Primera imagen -->
     <img src="https://i.ibb.co/Rrj08sx/CAPTURA1234567.png" alt="Imagen de cumpleaños 1">
     
     <!-- Segunda imagen -->
     <img src="https://i.ibb.co/SXgPgrFB/CAPTURA123456.png" alt="Imagen de cumpleaños 2">
-    
+    </div>
+    <!-- Álbum de imágenes -->
+    <div id="album" class="album">
+        <h2>Álbum de Fotos</h2>
+        <img src="https://i.ibb.co/rKG9QqCx/Whats-App-Image-2025-04-07-at-3-02-39-PM.jpg" alt="Imagen 1">
+        <img src="https://i.ibb.co/tpbjCfmf/Whats-App-Image-2025-04-07-at-3-03-47-PM.jpg" alt="Imagen 2">
+        <img src="https://i.ibb.co/HfzGKkH8/Whats-App-Image-2025-04-07-at-3-06-00-PM.jpg" alt="Imagen 3">
+        <img src="https://i.ibb.co/RpxgxDcb/Whats-App-Image-2025-04-07-at-3-11-05-PM.jpg" alt="Imagen 4">
+    </div>
+
+    <script>
+        // Función para mostrar el álbum
+        function mostrarAlbum(albumId) {
+            // Ocultar todos los álbumes
+            var albums = document.querySelectorAll('.album');
+            albums.forEach(function(album) {
+                album.classList.remove('show');
+            });
+
+            // Mostrar el álbum seleccionado
+            var album = document.getElementById(albumId);
+            album.classList.add('show');
+        }
+    </script>
 </body>
 </html>  
